@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses - Your College Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #002147;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #00152e;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #002147;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 300px;
+            max-width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons button {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #002147;
+            color: white;
+        }
+
+        .filter-buttons button:hover {
+            background: #0056b3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card h3 {
+            color: #002147;
+        }
+
+        .details {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .view-btn {
+            margin-top: 10px;
+            padding: 6px 12px;
+            border: none;
+            background: #ffcc00;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+
+<header>
+    <h1>ABC college</h1>
+    <p>Our Courses</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="admission.html">Admission</a>
+    </nav>
+
+<div class="container">
+
+    <h2 class="section-title">Explore Our Programs</h2>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for a course...">
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button onclick="filterCourses('all')">All</button>
+        <button onclick="filterCourses('engineering')">Engineering</button>
+        <button onclick="filterCourses('management')">Management</button>
+        <button onclick="filterCourses('science')">Science</button>
+        <button onclick="filterCourses('arts')">Arts</button>
+    </div>
+
+    <!-- Courses Grid -->
+    <div class="grid" id="courseGrid">
+
+        <div class="course-card engineering">
+            <h3>B.Tech - Computer Science</h3>
+            <button class="view-btn" onclick="toggleDetails(this)">View Details</button>
+            <div class="details">
+                Duration: 4 Years<br>
+                Eligibility: 10+2 with PCM<br>
+                Career: Software Developer, Data Scientist
+            </div>
+        </div>
+
+        <div class="course-card engineering">
+            <h3>B.Tech - Mechanical Engineering</h3>
+            <button class="view-btn" onclick="toggleDetails(this)">View Details</button>
+            <div class="details">
+                Duration: 4 Years<br>
+                Eligibility: 10+2 with PCM<br>
+                Career: Design Engineer, Production Manager
+            </div>
+        </div>
+
+        <div class="course-card management">
+            <h3>MBA</h3>
+            <button class="view-btn" onclick="toggleDetails(this)">View Details</button>
+            <div class="details">
+                Duration: 2 Years<br>
+                Eligibility: Graduation<br>
+                Career: Manager, Entrepreneur
+            </div>
+        </div>
+        <div class="course-card management">
+            <h3>MCA</h3>
+            <button class="view-btn" onclick="toggleDetails(this)">View Details</button>
+            <div class="details">
+                Duration: 2 Years<br>
+                Eligibility: Graduation<br>
+                Career: Manager, Entrepreneur
+            </div>
+        </div>
+
+
+        <div class="course-card science">
+            <h3>B.Sc - Physics</h3>
+            <button class="view-btn" onclick="toggleDetails(this)">View Details</button>
+            <div class="details">
+                Duration: 3 Years<br>
+                Eligibility: 10+2 with Science<br>
+                Career: Researcher, Lecturer
+            </div>
+        </div>
+       
+        <div class="course-card arts">
+            <h3>BA - English</h3>
+            <button class="view-btn" onclick="toggleDetails(this)">View Details</button>
+            <div class="details">
+                Duration: 3 Years<br>
+                Eligibility: 10+2<br>
+                Career: Writer, Teacher
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Your College Name | All Rights Reserved</p>
+</footer>
+
+<script>
+    function filterCourses(category) {
+        let courses = document.querySelectorAll('.course-card');
+        courses.forEach(course => {
+            if (category === 'all' || course.classList.contains(category)) {
+                course.style.display = "block";
+            } else {
+                course.style.display = "none";
+            }
+        });
+    }
+
+    function toggleDetails(button) {
+        let details = button.nextElementSibling;
+        if (details.style.display === "block") {
+            details.style.display = "none";
+            button.innerText = "View Details";
+        } else {
+            details.style.display = "block";
+            button.innerText = "Hide Details";
+        }
+    }
+
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+        let filter = this.value.toLowerCase();
+        let courses = document.querySelectorAll(".course-card");
+
+        courses.forEach(course => {
+            let text = course.innerText.toLowerCase();
+            if (text.includes(filter)) {
+                course.style.display = "block";
+            } else {
+                course.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

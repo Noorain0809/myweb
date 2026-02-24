@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>ABC college</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+  background-image: url("background.jpg");
+  background-size: cover;        /* Makes image cover entire screen */
+  background-repeat: no-repeat;  /* Prevents repeating */
+  background-position: center;   /* Centers the image */
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url(stu2.png);
+            line-height: 1.6;
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background: #002147;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #00152e;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #ffcc00;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #002147;
+        }
+        body{
+            margin: 0;
+            height: 100vh;
+            background-image: url('clg build.png');
+            background-size: cover;
+            animation: moveBg 3s linear infinite;
+        }
+        @keyframes moveBg{
+            from{ background-position: 0 0;}
+            to{background-position: 300px 0;}
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media(max-width: 768px){
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+            
+<header>
+    <h1>ABC college</h1>
+    <p>Empowering Education | Building Future Leaders</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="admission.html">Admission</a>
+</nav>
+
+<section class="hero">
+    <h1>ABC college</h1>
+    <p>Excellence in Education, Innovation in Research, Leadership in Society</p>
+    <a href="#" class="btn">Apply Now</a>
+</section>
+
+<div class="container">
+
+    <!-- About Section -->
+    <h2 class="section-title">About Our College</h2>
+    <div class="card">
+        <p>
+            Established in 2000, Your College Name is committed to providing high-quality 
+            education across various disciplines. Our mission is to nurture talent, 
+            foster innovation, and prepare students for global challenges.
+        </p>
+    </div>
+
+    <!-- Courses Section -->
+    <h2 class="section-title">Courses Offered</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Engineering</h3>
+            <ul>
+                <li>B.Tech - Computer Science</li>
+                <li>B.Tech - Mechanical Engineering</li>
+                <li>B.Tech - Civil Engineering</li>
+                <li>B.Tech - Electrical Engineering</li>
+                <li>M.Tech Programs</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Management</h3>
+            <ul>
+                <li>BBA (Bachelor of Business Administration)</li>
+                <li>MBA (Master of Business Administration)</li>
+                <li>PGDM</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Science</h3>
+            <ul>
+                <li>B.Sc - Physics</li>
+                <li>B.Sc - Chemistry</li>
+                <li>B.Sc - Mathematics</li>
+                <li>M.Sc Programs</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Arts & Humanities</h3>
+            <ul>
+                <li>BA - English</li>
+                <li>BA - Economics</li>
+                <li>BA - Political Science</li>
+                <li>MA Programs</li>
+                <li>BBA Programs</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Commerce</h3>
+            <ul>
+                <li>B.Com (General)</li>
+                <li>B.Com (Accounting & Finance)</li>
+                <li>M.Com</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Computer Applications</h3>
+            <ul>
+                <li>BCA (Bachelor of Computer Applications)</li>
+                <li>MCA (Master of Computer Applications)</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Facilities Section -->
+    <h2 class="section-title">Our Facilities</h2>
+    <div class="grid">
+        <div class="card">Modern Laboratories</div>
+        <div class="card">Digital Library</div>
+        <div class="card">Sports Complex</div>
+        <div class="card">Hostel Accommodation</div>
+        <div class="card">Wi-Fi Enabled Campus</div>
+        <div class="card">Placement Cell</div>
+    <p>ABC college| All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

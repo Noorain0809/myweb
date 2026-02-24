@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Courses - ABC College</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>All Courses</h1>
+
+  <!-- Search Bar -->
+  <input type="text" id="searchInput" placeholder="Search courses...">
+
+  <!-- Filter Dropdown -->
+  <select id="departmentFilter">
+    <option value="all">All Departments</option>
+    <option value="science">Science</option>
+    <option value="commerce">Commerce</option>
+    <option value="arts">Arts</option>
+  </select>
+
+  <!-- Courses Container -->
+  <div id="coursesContainer">
+    <div class="course-card" data-department="science">
+      <h3>BSc Computer Science</h3>
+      <p>Duration: 3 Years</p>
+      <p>Fees: $2000/year</p>
+      <button>Apply Now</button>
+    </div>
+
+    <div class="course-card" data-department="commerce">
+      <h3>BCom Accounting</h3>
+      <p>Duration: 3 Years</p>
+      <p>Fees: $1800/year</p>
+      <button>Apply Now</button>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

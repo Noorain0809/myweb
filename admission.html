@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Admissions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+}
+
+header {
+            background: #002147;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #00152e;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+.section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+nav{
+    background-color: #002147;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+    border-color: #004080;
+    outline: none;
+}
+
+button {
+    background: #002147;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #ff9800;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: #004080;
+    transition: width 0.3s ease;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background: #e6ffe6;
+    color: green;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    
+    <h1>Admissions Open 2026</h1>
+    <p>Apply now and shape your future with us!</p>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  <a href="Contact.html">Contact</a>
+  <a href="Courses.html">Courses</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="admission.html">Admission</a>
+</nav>
+</header>
+
+
+<div class="section">
+    <h2>Why Choose Our College?</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Experienced Faculty</h3>
+            <p>Highly qualified professors and industry experts.</p>
+        </div>
+        <div class="card">
+            <h3>Modern Campus</h3>
+            <p>State-of-the-art labs and infrastructure.</p>
+        </div>
+        <div class="card">
+            <h3>Excellent Placements</h3>
+            <p>Strong industry connections and career support.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Apply Now</h2>
+
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <form id="admissionForm">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label>Select Course</label>
+            <select id="course" required>
+                <option value="">-- Select Course --</option>
+                <option>Bachelor of Science</option>
+                <option>Bachelor of Arts</option>
+                <option>Bachelor of Commerce</option>
+                <option>Bachelor of Technology</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>12th Grade Percentage</label>
+            <input type="number" id="percentage" min="0" max="100" required>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+        🎉 Application Submitted Successfully!
+    </div>
+</div>
+
+<script>
+const form = document.getElementById("admissionForm");
+const progress = document.getElementById("progress");
+const inputs = form.querySelectorAll("input, select");
+
+inputs.forEach(input => {
+    input.addEventListener("input", updateProgress);
+});
+
+function updateProgress() {
+    let filled = 0;
+    inputs.forEach(input => {
+        if (input.value.trim() !== "") {
+            filled++;
+        }
+    });
+    let percent = (filled / inputs.length) * 100;
+    progress.style.width = percent + "%";
+}
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const percentage = document.getElementById("percentage").value;
+
+    if (percentage < 50) {
+        alert("Minimum 50% required for admission.");
+        return;
+    }
+
+    document.getElementById("successMessage").style.display = "block";
+    form.reset();
+    progress.style.width = "0%";
+});
+</script>
+
+</body>
+</html>
